@@ -1,0 +1,13 @@
+C:\Repo\butterfly.service.schedule\butterfly.service.schedule\bin\Debug\Data.sdf
+C:\Repo\butterfly.service.schedule\butterfly.service.schedule\bin\Debug\butterfly.service.schedule.dll
+C:\Repo\butterfly.service.schedule\butterfly.service.schedule\bin\Debug\butterfly.service.schedule.pdb
+C:\Repo\butterfly.service.schedule\butterfly.service.schedule\bin\Debug\EntityFramework.dll
+C:\Repo\butterfly.service.schedule\butterfly.service.schedule\bin\Debug\EntityFramework.xml
+C:\Repo\butterfly.service.schedule\butterfly.service.schedule\obj\Debug\butterfly.service.schedule.csprojResolveAssemblyReference.cache
+C:\Repo\butterfly.service.schedule\butterfly.service.schedule\obj\Debug\butterfly.service.schedule.dll
+C:\Repo\butterfly.service.schedule\butterfly.service.schedule\obj\Debug\butterfly.service.schedule.pdb
+C:\Repo\butterfly.service.schedule\butterfly.service.schedule\bin\Debug\butterfly.com.rest.dll
+C:\Repo\butterfly.service.schedule\butterfly.service.schedule\bin\Debug\butterfly.com.rest.pdb
+C:\Repo\butterfly.service.schedule\butterfly.service.schedule\bin\Debug\Web.config
+C:\Repo\butterfly.service.schedule\butterfly.service.schedule\bin\Debug\Web.Debug.config
+C:\Repo\butterfly.service.schedule\butterfly.service.schedule\bin\Debug\Web.Release.config

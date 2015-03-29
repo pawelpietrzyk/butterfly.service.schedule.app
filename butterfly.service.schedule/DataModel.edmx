@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ScheduleModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ScheduleModelStoreContainer">
+          <EntitySet Name="DayGroupRelation" EntityType="ScheduleModel.Store.DayGroupRelation" store:Type="Tables" />
+          <EntitySet Name="DayGroupTable" EntityType="ScheduleModel.Store.DayGroupTable" store:Type="Tables" />
+          <EntitySet Name="DayTable" EntityType="ScheduleModel.Store.DayTable" store:Type="Tables" />
+          <EntitySet Name="ScheduleEntry" EntityType="ScheduleModel.Store.ScheduleEntry" store:Type="Tables" />
+          <EntitySet Name="ScheduleParam" EntityType="ScheduleModel.Store.ScheduleParam" store:Type="Tables" />
+          <EntitySet Name="SpecialDayGroupDayRelation" EntityType="ScheduleModel.Store.SpecialDayGroupDayRelation" store:Type="Tables" />
+          <EntitySet Name="SpecialDayGroupTable" EntityType="ScheduleModel.Store.SpecialDayGroupTable" store:Type="Tables" />
+          <EntitySet Name="SpecialDayTable" EntityType="ScheduleModel.Store.SpecialDayTable" store:Type="Tables" />
+        </EntityContainer>
+        <EntityType Name="DayGroupRelation">
+          <Key>
+            <PropertyRef Name="DayGroupId" />
+            <PropertyRef Name="DayId" />
+          </Key>
+          <Property Name="DayGroupId" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="DayId" Type="nvarchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="DayGroupTable">
+          <Key>
+            <PropertyRef Name="DayGroupId" />
+          </Key>
+          <Property Name="DayGroupId" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Description" Type="smallint" />
+        </EntityType>
+        <EntityType Name="DayTable">
+          <Key>
+            <PropertyRef Name="DayId" />
+          </Key>
+          <Property Name="DayId" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="DayOfWeek" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ScheduleEntry">
+          <Key>
+            <PropertyRef Name="Time" />
+          </Key>
+          <Property Name="Time" Type="datetime" Nullable="false" />
+          <Property Name="ParamId" Type="nvarchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ScheduleParam">
+          <Key>
+            <PropertyRef Name="ParamId" />
+          </Key>
+          <Property Name="ParamId" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="DayGroupId" Type="nvarchar" MaxLength="20" />
+          <Property Name="SpecialDateGroupId" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="SpecialDayGroupDayRelation">
+          <Key>
+            <PropertyRef Name="SpecialDayGroupId" />
+            <PropertyRef Name="SpecialDayId" />
+          </Key>
+          <Property Name="SpecialDayGroupId" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="SpecialDayId" Type="nvarchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="SpecialDayGroupTable">
+          <Key>
+            <PropertyRef Name="SpecialGroupId" />
+          </Key>
+          <Property Name="SpecialGroupId" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SpecialDayTable">
+          <Key>
+            <PropertyRef Name="SpecialDayId" />
+          </Key>
+          <Property Name="SpecialDayId" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ScheduleModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ScheduleEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DayGroupTable" EntityType="ScheduleModel.DayGroupTable" />
+          <EntitySet Name="DayTable" EntityType="ScheduleModel.DayTable" />
+          <EntitySet Name="ScheduleEntry" EntityType="ScheduleModel.ScheduleEntry" />
+          <EntitySet Name="ScheduleParam" EntityType="ScheduleModel.ScheduleParam" />
+          <EntitySet Name="SpecialDayGroupTable" EntityType="ScheduleModel.SpecialDayGroupTable" />
+          <EntitySet Name="SpecialDayTable" EntityType="ScheduleModel.SpecialDayTable" />
+          <EntitySet Name="DayGroupRelation" EntityType="ScheduleModel.DayGroupRelation" />
+          <EntitySet Name="SpecialDayGroupDayRelation" EntityType="ScheduleModel.SpecialDayGroupDayRelation" />
+        </EntityContainer>
+        <EntityType Name="DayGroupTable">
+          <Key>
+            <PropertyRef Name="DayGroupId" />
+          </Key>
+          <Property Name="DayGroupId" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="Int16" />
+        </EntityType>
+        <EntityType Name="DayTable">
+          <Key>
+            <PropertyRef Name="DayId" />
+          </Key>
+          <Property Name="DayId" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="DayOfWeek" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ScheduleEntry">
+          <Key>
+            <PropertyRef Name="Time" />
+          </Key>
+          <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ParamId" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ScheduleParam">
+          <Key>
+            <PropertyRef Name="ParamId" />
+          </Key>
+          <Property Name="ParamId" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="DayGroupId" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="SpecialDateGroupId" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SpecialDayGroupTable">
+          <Key>
+            <PropertyRef Name="SpecialGroupId" />
+          </Key>
+          <Property Name="SpecialGroupId" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SpecialDayTable">
+          <Key>
+            <PropertyRef Name="SpecialDayId" />
+          </Key>
+          <Property Name="SpecialDayId" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="DayGroupRelation">
+          <Key>
+            <PropertyRef Name="DayGroupId" />
+            <PropertyRef Name="DayId" />
+          </Key>
+          <Property Type="String" Name="DayGroupId" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DayId" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SpecialDayGroupDayRelation">
+          <Key>
+            <PropertyRef Name="SpecialDayGroupId" />
+            <PropertyRef Name="SpecialDayId" />
+          </Key>
+          <Property Type="String" Name="SpecialDayGroupId" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SpecialDayId" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ScheduleModelStoreContainer" CdmEntityContainer="ScheduleEntities">
+          <EntitySetMapping Name="DayGroupTable">
+            <EntityTypeMapping TypeName="ScheduleModel.DayGroupTable">
+              <MappingFragment StoreEntitySet="DayGroupTable">
+                <ScalarProperty Name="DayGroupId" ColumnName="DayGroupId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DayTable">
+            <EntityTypeMapping TypeName="ScheduleModel.DayTable">
+              <MappingFragment StoreEntitySet="DayTable">
+                <ScalarProperty Name="DayId" ColumnName="DayId" />
+                <ScalarProperty Name="DayOfWeek" ColumnName="DayOfWeek" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScheduleEntry">
+            <EntityTypeMapping TypeName="ScheduleModel.ScheduleEntry">
+              <MappingFragment StoreEntitySet="ScheduleEntry">
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="ParamId" ColumnName="ParamId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScheduleParam">
+            <EntityTypeMapping TypeName="ScheduleModel.ScheduleParam">
+              <MappingFragment StoreEntitySet="ScheduleParam">
+                <ScalarProperty Name="ParamId" ColumnName="ParamId" />
+                <ScalarProperty Name="DayGroupId" ColumnName="DayGroupId" />
+                <ScalarProperty Name="SpecialDateGroupId" ColumnName="SpecialDateGroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SpecialDayGroupTable">
+            <EntityTypeMapping TypeName="ScheduleModel.SpecialDayGroupTable">
+              <MappingFragment StoreEntitySet="SpecialDayGroupTable">
+                <ScalarProperty Name="SpecialGroupId" ColumnName="SpecialGroupId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SpecialDayTable">
+            <EntityTypeMapping TypeName="ScheduleModel.SpecialDayTable">
+              <MappingFragment StoreEntitySet="SpecialDayTable">
+                <ScalarProperty Name="SpecialDayId" ColumnName="SpecialDayId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DayGroupRelation">
+            <EntityTypeMapping TypeName="ScheduleModel.DayGroupRelation">
+              <MappingFragment StoreEntitySet="DayGroupRelation">
+                <ScalarProperty Name="DayId" ColumnName="DayId" />
+                <ScalarProperty Name="DayGroupId" ColumnName="DayGroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SpecialDayGroupDayRelation">
+            <EntityTypeMapping TypeName="ScheduleModel.SpecialDayGroupDayRelation">
+              <MappingFragment StoreEntitySet="SpecialDayGroupDayRelation">
+                <ScalarProperty Name="SpecialDayId" ColumnName="SpecialDayId" />
+                <ScalarProperty Name="SpecialDayGroupId" ColumnName="SpecialDayGroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

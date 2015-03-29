@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6263d4e13e414ad18e28c097501e62d7" Name="Diagram1">
+        <EntityTypeShape EntityType="ScheduleModel.DayGroupTable" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScheduleModel.DayTable" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScheduleModel.ScheduleEntry" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScheduleModel.ScheduleParam" Width="1.5" PointX="2.875" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScheduleModel.SpecialDayGroupTable" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScheduleModel.SpecialDayTable" Width="1.5" PointX="4.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScheduleModel.DayGroupRelation" Width="1.5" PointX="7.426657383994506" PointY="31.041530981213569" />
+        <EntityTypeShape EntityType="ScheduleModel.SpecialDayGroupDayRelation" Width="1.5" PointX="6.75" PointY="1.5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
